@@ -52,7 +52,7 @@ section {
   justify-content: space-between;
   font-size: 32px;
   padding: 0 30px;
-  z-index: 100;
+  z-index: 102;
   box-sizing: border-box;
 }
 
@@ -72,6 +72,7 @@ section {
   justify-content: center;
   flex-direction: column;
   transition: left 0.3s;
+  z-index: 101;
 }
 
 .nav.active {
@@ -91,15 +92,22 @@ section {
   padding: 10px 0;
   border-bottom: 1px solid
     rgba(255, 255, 255, 0.3);
+  transition: padding 0.3s;
+}
+
+.nav a.active {
+  color: #ffffff;
+  padding-left: 30px;
 }
 
 .search_area {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
   height: 100px;
-  z-index: 101;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +116,7 @@ section {
 
 .search_area form {
   position: relative;
-  width: 40%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -153,7 +161,12 @@ form input {
 .info .line {
   height: 3px;
   background: var(--accent);
-  width: 80%;
+  width: 0;
+  transition: width 0.3s;
+}
+
+.info .line.active {
+  width: 50%;
 }
 
 .info p {
@@ -182,4 +195,8 @@ form input {
 .photo {
   border-radius: 12px;
   overflow: hidden;
+}
+
+#fp-nav ul li a span {
+  background: var(--accent);
 }
